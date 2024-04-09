@@ -1,0 +1,21 @@
+//syntax — specifies that you’re using proto3 syntax
+
+syntax = "proto3";
+
+//java_package — file option that specifies package declaration for your generated classes,
+//which helps prevent naming conflicts between different projects
+
+option java_package = "com.tutorial.preferencedatastoreapplication";
+
+//java_multiple_files — file option that specifies whether only a single file with nested
+//subclasses will be generated for this .proto (when set to false) or if separate files will
+//be generated for each top-level message type (when set to true); it is false by default
+
+option java_multiple_files = true;
+
+message ProtoPreferences {
+  //first field
+  map<string, bool> bookmarked_article_ids = 1;
+  //second field
+  map<string, bool> read_article_ids = 2;
+}
